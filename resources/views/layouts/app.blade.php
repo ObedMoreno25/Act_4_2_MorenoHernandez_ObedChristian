@@ -8,7 +8,7 @@
 <body>
     {{-- Aquí puedes poner tu barra de navegación como web component --}}
     <barra-busqueda>
-    <logo-enfasis slot="logo">UNIVERSIDAD <br>AUTONOMA</logo-enfasis>
+    <logo-enfasis slot="logo">UNIVERSIDAD <br>AUTONOMA DE SAN LUIS POTOSÍ</logo-enfasis>
     <input-busqueda-app slot="input" placeholder="Buscar..."></input-busqueda-app>
     </barra-busqueda>
 
