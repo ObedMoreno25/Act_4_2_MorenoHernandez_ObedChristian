@@ -13,14 +13,13 @@ class InputApp extends HTMLElement {
             <style>
                 .container {
                     display: flex;
-                    width: 396px;
-                    height: 45px;
-                    padding: 13px 24px;
+                    width: 100%;
+                    height: 100%;
                     align-items: center;
                     gap: 10px;
-                    border-radius: 200px;
-                    background: #FFF;
-                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+                    background: transparent;
+                    box-shadow: none;
+                    padding: 0;
                 }
                 input {
                     border: none;

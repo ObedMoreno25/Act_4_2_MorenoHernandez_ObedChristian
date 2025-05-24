@@ -1,0 +1,101 @@
+.principal-row {
+    display: flex;
+    gap: 40px; /* Separación entre las columnas, ajústalo según Figma */
+    padding: 32px 64px; /* Espaciado general alrededor del layout, ajústalo según Figma */
+    justify-content: center;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Separación entre elementos dentro del frame, ajusta según Figma */
+    background: transparent; /* o ponle color si tu frame lo necesita */
+    border-radius: 8px; /* si lo requieres */
+    /* Si quieres que el frame ocupe el mismo alto que la imagen: */
+    /* height: 619px; */
+}
+
+.frame-1 {
+    padding: 32px; /* según lo que pides en el primer frame */
+    width: 341px; /* Si quieres que el frame tenga ancho fijo */
+    /* o quítalo para que el contenido decida el ancho */
+}
+
+.frame-2 {
+    display: flex;
+    padding: 64px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    flex: 1 0 0;
+    align-self: stretch;
+    align-items: stretch;
+
+    /* esto hace que la columna 2 crezca a ocupar el espacio sobrante */
+}
+
+.contenedor-card {
+    display: flex;
+    padding: 16px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 24px;
+    background: #FFF;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.09);
+    max-width: 600px; /* O el que necesites */
+    width: 100%;      /* O usa width: auto; si prefieres */
+}
+
+
+
+.contenedor{
+    display: flex;
+    padding: 64px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border-radius: 24px;
+    background: var(--Primitive-Color-White-70, #FFF);
+}
+
+.barra-busqueda {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #005CBF;
+            border-radius: 14px;
+            color: #fff;
+            min-height: 60px;
+            font-family: inherit;
+            font-size: 1.3rem;
+            gap: 32px;
+        }
+        .logo-enfasis {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #fff;
+            letter-spacing: 1px;
+            gap: 12px;
+        }
+        .input-busqueda-app {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 200px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 8px 20px;
+            min-width: 200px;
+            color: #333;
+        }
+        .input-busqueda-app input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 1rem;
+            color: #333;
+        }

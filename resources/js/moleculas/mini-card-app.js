@@ -4,22 +4,26 @@ class MiniCardApp extends HTMLElement {
         this.attachShadow({ mode: 'open' });
     }
     connectedCallback() {
-        // Puedes recibir el ícono por atributo o slot, igual que antes
+        // Atributos opcionales: icon (url), title
         const icon = this.getAttribute('icon') || '';
         const title = this.getAttribute('title') || '';
 
         this.shadowRoot.innerHTML = `
             <style>
-                .card-row {
+                .card {
                     display: flex;
-                    padding: 0px 32px;
-                    align-items: center;
+                    height: 174px;
+                    padding-left: 16px;
+                    flex-direction: column;
+                    align-items: flex-start;
                     gap: 10px;
                     align-self: stretch;
                     background: #fff;
                     border-radius: 18px;
                     box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
-                    min-height: 80px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    padding-right: 24px;
                     box-sizing: border-box;
                 }
                 .icono {
@@ -28,38 +32,23 @@ class MiniCardApp extends HTMLElement {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    flex-shrink: 0;
-                }
-                .contenido {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex: 1 1 0;
-                    gap: 4px;
-                    min-width: 0;
+                    margin-bottom: 4px;
                 }
                 .titulo {
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     font-weight: bold;
+                    margin-bottom: 6px;
                     color: #222;
                     font-family: inherit;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    margin-bottom: 2px;
                 }
                 .parrafo {
                     font-size: 1rem;
                     color: #555;
                     font-family: inherit;
                     line-height: 1.5;
-                    white-space: normal;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
                 }
             </style>
-            <div class="card-row">
+            <div class="card">
                 <div class="icono">
                     ${
                         icon
@@ -67,16 +56,15 @@ class MiniCardApp extends HTMLElement {
                         : `<slot name="icon"></slot>`
                     }
                 </div>
-                <div class="contenido">
-                    <div class="titulo">
-                        <slot name="title">${title}</slot>
-                    </div>
-                    <div class="parrafo">
-                        <slot></slot>
-                    </div>
+                <div class="titulo">
+                    <slot name="title">${title}</slot>
+                </div>
+                <div class="parrafo">
+                    <slot></slot>
                 </div>
             </div>
         `;
     }
 }
+
 customElements.define('mini-card-app', MiniCardApp);
